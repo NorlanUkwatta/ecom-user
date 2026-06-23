@@ -4,5 +4,5 @@ import jakarta.ejb.Remote;
 
 @Remote
 public interface TestRemote {
-    void test();
+    String test();
 }
