@@ -5,34 +5,34 @@ import jakarta.annotation.PreDestroy;
 import jakarta.ejb.*;
 import lk.jiat.ecom.user.remote.TestRemote;
 
-@Stateful(mappedName = "TestSessionBean")
+@Stateful(mappedName = "TestNewSessionBean")
 //@Startup
-public class TestSessionBean implements TestRemote {
+public class TestNewSessionBean implements TestRemote {
 
     int i;
 
-    public TestSessionBean() {
-        System.out.println("TestSessionBean created");
+    public TestNewSessionBean() {
+        System.out.println("TestNewSessionBean created");
     }
 
     @PostConstruct
     public void init() {
-        System.out.println("TestSessionBean init");
+        System.out.println("TestNewSessionBean init");
     }
 
     @PreDestroy
     public void destroy() {
-        System.out.println("TestSessionBean destroy");
+        System.out.println("TestNewSessionBean destroy");
     }
 
     @PostActivate
     public void postActivate() {
-        System.out.println("TestSessionBean postActivate");
+        System.out.println("TestNewSessionBean postActivate");
     }
 
     @PrePassivate
     public void prePassivate() {
-        System.out.println("TestSessionBean prePassivate"  );
+        System.out.println("TestNewSessionBean prePassivate"  );
     }
 
     @Override
@@ -42,13 +42,13 @@ public class TestSessionBean implements TestRemote {
 
         i++;
 
-        System.out.println("TestSessionBean test()");
+        System.out.println("TestNewSessionBean test()");
 
         try {
             Thread.sleep(5000);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return "TestSessionBean: test " + i;
+        return "TestNewSessionBean: test " + i;
     }
 }
